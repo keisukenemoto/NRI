@@ -1,0 +1,377 @@
+.p
+{
+    text-align:center;
+}
+
+li
+{
+    list-style-type:none;
+}
+
+.header
+{
+  width: 100%;
+  padding-top:0px;
+  padding-bottom: 50px;
+  background: white;
+}
+
+#logo
+{
+    width: 60px;
+    height: 50px;
+    float: left;
+    margin: 0;
+    padding-left:40px;
+    padding-top: 10px;
+}
+
+.globalNavi
+{
+  float: right;
+}
+
+.globalNavi ul
+{
+  margin: 0;
+}
+
+.globalNavi li
+{
+  list-style:none ;
+  display: inline-block;
+}
+
+  #nav-drawer
+  {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    float: right;
+    vertical-align: middle;
+    padding:20px;
+    background-color: rgb(0, 86, 245);
+    /*headイメージと揃えたい*/
+  }
+
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    /*
+    width: 100px;
+    height: 50px;
+    */
+    margin-left: 20px;
+  }
+
+
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース 三本線の正体*/
+  #nav-open{
+   /* display:block; 元はinline-block*/
+    width:50px;
+    height:50px;
+    vertical-align: middle;
+    color: #fff;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+    background-color: #fff;
+
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(105%);
+    transform: translateX(105%);/*左に隠しておく*/
+  }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+.topicPath
+{
+    font-size: 10px;
+    color:gray;
+    padding-left:219px;
+    float:left;
+}
+
+.pagebody
+{
+  text-align: center;
+}
+
+.pageBodyMain
+{
+  width: 750px;
+  margin: 0 auto 0 auto;
+}
+
+#head_image
+{
+    width:100%;
+    height: 100%;
+    margin:0 0;
+}
+
+.mainText
+{
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.mainImage
+{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+
+}
+
+.mainText h1
+{
+  text-align: left;
+}
+
+.mainText ul
+{
+  list-style: none;
+}
+
+table 
+{
+  width:100%;
+  height: 1px;
+  font-size: 14px;
+  border-spacing: 20px;
+  border-collapse:separate;
+}
+
+#strength table
+{
+  background-color: rgb(129, 208, 253);
+  border: 1px solid rgb(129, 208, 253);
+}
+
+
+table caption
+{
+  float: left;
+}
+
+#upper table tr
+{
+  margin-top:3; 
+
+
+}
+
+#upper td,#bottom td
+{
+  /*width:3px; なぜか左側のtdが大きくなる。*/
+  border:1px solid #cccccc;
+padding: 5px 0 5px 10px;
+}
+
+#mainImage1
+{
+text-align: center;
+}
+
+#mainImage2
+{
+  padding-top:40px; 
+}
+
+.button
+{
+  border: rgb(0, 86, 245);
+  padding: 20px;
+  padding-bottom:30px; 
+  background-color: rgb(0, 86, 245);
+  text-align: center;
+  display: block;
+  height: 40px;
+  width: 295px;
+  margin: 40px auto 0 auto;
+}
+
+.button a{
+  color: #fff;
+  font-size: 16px;
+
+}
+
+#prev
+{
+  float:left;
+  color: cornflowerblue
+}
+#next
+{
+  float:right;
+  color: cornflowerblue
+}
+
+.icon
+{
+  float:right;
+  list-style:none;
+
+
+  
+
+}
+.infomation
+{
+  width: 1080px;
+  border-top:2px solid black;
+  margin-top:100px;
+  margin-right: auto;
+  margin-left : auto;
+
+}
+
+.infomation h3
+{
+  border-bottom: 1px dotted #a5a5a5;
+  padding-bottom:18px;
+}
+
+#managementPolicy,#strength2,#companyIntroduction,#branch
+{
+  border-bottom:  1px dotted #a5a5a5;
+  background-color: white;
+}
+
+#managementPolicy caption,#strength2 caption,#companyIntroduction caption,#branch caption
+{
+  font-weight: bold;
+}
+
+#managementPolicy td,#strength2 td,#companyIntroduction td,#branch td
+{
+  color: rgb(2, 48, 250);
+}
+
+#managementPolicy tr td a,#strength2 tr td a,#companyIntroduction tr td a,#branch tr td a
+{
+  color:black;
+}
+
+td
+{
+  width: 25%;
+}
+
+
+.icon ul{
+  font-weight: bold;
+  font-size: 16px;
+  padding: 30px 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  list-style: none;
+  display: inline-block;
+  margin: 10px auto 10px auto;
+  border-top: solid grey 2px;
+  border-bottom: solid grey 2px;
+}
+
+.icon ul li img{
+  height: 24px;
+
+}
+
+.index
+{
+  width: 1080px;
+  margin-top:100px;
+  margin-right: auto;
+  margin-left : auto;
+  color: darkgrey;
+ /*   border-top:2px solid black;*/ 
+}
+
+.index ul
+{
+  list-style:none;
+  padding:0;
+  width: 25%;
+}
+
+.index ul li
+{
+  font-size: 14px;
+  color: #555;
+  margin-top: 15px;
+}
+
+.listHead
+{
+  font-weight: bold;
+  font-size: 16px;
+  color: #555;
+  border-top:solid darkgrey 1px;
+  border-bottom:solid darkgrey 1px;
+  line-height: 60px;
+  padding: 0;
+  margin: 0;
+}
