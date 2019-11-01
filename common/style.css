@@ -14,6 +14,7 @@ li
   padding-top:0px;
   padding-bottom: 50px;
   background: white;
+
 }
 
 #logo
@@ -42,6 +43,10 @@ li
   display: inline-block;
 }
 
+#global_icon
+{
+  padding-bottom:5px; ;
+}
   #nav-drawer
   {
     position: relative;
@@ -50,7 +55,7 @@ li
     float: right;
     vertical-align: middle;
     padding:20px;
-    background-color: rgb(0, 86, 245);
+    background-color: #005BAC;
     /*headイメージと揃えたい*/
   }
 
@@ -145,16 +150,20 @@ li
 
 .topicPath
 {
-    font-size: 10px;
-    color:gray;
-    padding-left:219px;
-    float:left;
+    font-size: 12px;
+    font-family:"NotoSansJP";
+    color:#999999;
+    margin-left:223px;
+    width: 400px;
+    margin-bottom:0;
+    margin-top:80px;
 }
 
 .pagebody
 {
   text-align: center;
 }
+
 
 .pageBodyMain
 {
@@ -166,7 +175,7 @@ li
 {
     width:100%;
     height: 100%;
-    margin:0 0;
+    margin:20px 0 0 0;
 }
 
 .mainText
@@ -222,12 +231,35 @@ table caption
 
 }
 
+#upper td::before,#bottom td::before
+{
+  content:"";
+  /*　矢印を置きたいが、表示されない
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid #7a0;
+  border-right: 1px solid #7a0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+*/
+}
+
 #upper td,#bottom td
 {
   /*width:3px; なぜか左側のtdが大きくなる。*/
-  border:1px solid #cccccc;
+border:1px solid #cccccc;
 padding: 5px 0 5px 10px;
+background-color: white;
+padding: 15px;
+text-align: center;
+color: #0A4199;
+font-size: 16px;
 }
+
+
+
+
 
 #mainImage1
 {
@@ -241,33 +273,44 @@ text-align: center;
 
 .button
 {
-  border: rgb(0, 86, 245);
+  border:#005BAC;
+  background-color: #005BAC;
   padding: 20px;
   padding-bottom:30px; 
-  background-color: rgb(0, 86, 245);
   text-align: center;
   display: block;
   height: 40px;
   width: 295px;
-  margin: 40px auto 0 auto;
+  margin: 40px auto 60px auto;
 }
 
 .button a{
   color: #fff;
   font-size: 16px;
-
 }
 
+#strength
+{
+  background-color: #DEECF8;
+}
+
+#prev,#next
+{
+  font-size:16px;
+  color:#0c419a;
+  color: cornflowerblue;
+  margin-bottom:45px;
+}
 #prev
 {
   float:left;
-  color: cornflowerblue
 }
 #next
 {
   float:right;
-  color: cornflowerblue
 }
+
+
 
 
 .infomation
@@ -277,12 +320,12 @@ text-align: center;
   margin-top:100px;
   margin-right: auto;
   margin-left : auto;
-
 }
 
 .infomation h3
 {
   border-bottom: 1px dotted #a5a5a5;
+  color: #0c419a;
   padding-bottom:18px;
 }
 
@@ -299,7 +342,7 @@ text-align: center;
 
 #managementPolicy td,#strength2 td,#companyIntroduction td,#branch td
 {
-  color: rgb(2, 48, 250);
+  color: #0c419a;
 }
 
 #managementPolicy tr td a,#strength2 tr td a,#companyIntroduction tr td a,#branch tr td a
@@ -319,15 +362,23 @@ width: 100%;
 height: 48px;
 list-style:none;
 padding: 0;
+
 }
 
 .icon li
 {
   float:right;
-  font-size: 12px;
   padding-left:10px;
-font-size: 14px;
 line-height: 20px;
+}
+
+.icon li a
+{
+  font-size: 10px;
+font-family:"Noto Sans JP", "sans-serif";
+color: #333333;
+font-weight: 400;
+
 }
 
 .icon li img
@@ -341,6 +392,7 @@ h2::before
   content:'';
   display:inline-block;
   background-image:url(../images/NRI_h2.png);
+  background-repeat: no-repeat;
   background-size:contain;
   vertical-align:middle;
   height: 24px;
@@ -348,20 +400,19 @@ h2::before
   padding-left:5px;
 }
 
-
-
-
 .snsIcon
 {
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin: 100px;
     border-top: 2px solid grey;
     border-bottom: 2px solid grey;
     padding: 30px 0;
     text-align: center;
+    width: 100%;
+    margin-top: 100px;
+
  /* font-weight: bold;
   font-size: 16px;
   padding: 30px 0;
@@ -375,6 +426,8 @@ h2::before
   border-bottom: solid grey 2px;
   box-sizing:border-box;
   display:flex;*/
+ 
+
 }
 
 .snsIcon li
@@ -384,6 +437,7 @@ h2::before
   font-size: 2rem;
   font-weight: 700;
   padding: 15px;
+  padding-left: 25px;
   /*
   font-size: 12px;
   padding-left:10px;
@@ -401,6 +455,13 @@ height: 30px;
 width: 30px;
 }
 
+li#follow
+{
+  font-size: 22px;
+  padding-bottom: 25px;
+
+}
+
 
 .indexMaster
 {
@@ -414,10 +475,6 @@ width: 30px;
 
 .index
 {
-
-
-
-	list-style-type: none;
   display: flex;
 }
 
@@ -431,6 +488,22 @@ width: 30px;
 {
 padding: 10px;
 }
+
+.index p
+{
+  position: relative;
+  padding-left:1em;
+}
+
+.index ul li p::before {
+  display: block;
+  position: absolute;    /* absoluteにすると消えちゃうのなんで？*/
+  content:">";
+  width: 1em;
+  height: 1em;
+  left: 0;
+  top: 0%;
+ }
 
 .listHead
 {
