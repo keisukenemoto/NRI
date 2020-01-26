@@ -11,10 +11,11 @@ li
 .header
 {
   width: 100%;
-  padding-top:0px;
-  padding-bottom: 50px;
-  background: white;
-
+  top:0px;
+  background-color: white;
+  position: fixed;
+  margin: 0 auto;
+  z-index:10;
 }
 
 #logo
@@ -35,6 +36,7 @@ li
 .globalNavi ul
 {
   margin: 0;
+  height: 65px;
 }
 
 .globalNavi li
@@ -71,12 +73,12 @@ li
   }
 
 
-  
+
   /*チェックボックス等は非表示に*/
   .nav-unshown {
     display:none;
   }
-  
+
   /*アイコンのスペース 三本線の正体*/
   #nav-open{
    /* display:block; 元はinline-block*/
@@ -85,7 +87,7 @@ li
     vertical-align: middle;
     color: #fff;
   }
-  
+
   /*ハンバーガーアイコンをCSSだけで表現*/
   #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
@@ -97,7 +99,6 @@ li
     content: '';
     cursor: pointer;
     background-color: #fff;
-
   }
   #nav-open span:before {
     bottom: -8px;
@@ -105,49 +106,11 @@ li
   #nav-open span:after {
     bottom: -16px;
   }
-  
-  /*閉じる用の薄黒カバー*/
-  #nav-close {
-    display: none;/*はじめは隠しておく*/
-    position: fixed;
-    z-index: 99;
-    top: 0;/*全体に広がるように*/
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0;
-    transition: .3s ease-in-out;
-  }
-  
-  /*中身*/
-  #nav-content {
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-    max-width: 330px;/*最大幅（調整してください）*/
-    height: 100%;
-    background: #fff;/*背景色*/
-    transition: .3s ease-in-out;/*滑らかに表示*/
-    -webkit-transform: translateX(105%);
-    transform: translateX(105%);/*左に隠しておく*/
-  }
-  
-  /*チェックが入ったらもろもろ表示*/
-  #nav-input:checked ~ #nav-close {
-    display: block;/*カバーを表示*/
-    opacity: .5;
-  }
-  
-  #nav-input:checked ~ #nav-content {
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);/*中身を表示（右へスライド）*/
-    box-shadow: 6px 0 25px rgba(0,0,0,.15);
-  }
 
+  .pageBodyTopic
+  {
+    margin-top: 135px;
+  }
 .topicPath
 {
     font-size: 12px;
@@ -167,15 +130,48 @@ li
 
 .pageBodyMain
 {
-  width: 750px;
+  width: 800px;
   margin: 0 auto 0 auto;
 }
+
+.head_image
+{
+  position:relative;
+  height: 250px;
+  margin-bottom:35px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.head_image h1
+{
+  position: absolute;
+  color: white;/*文字は白に*/
+  top: 93px;
+  left: 223px;
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.head_image h2
+{
+  position: absolute;
+  color: white;/*文字は白に*/
+  top: 46px;
+  left: 223px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
 
 #head_image
 {
     width:100%;
-    height: 100%;
+    height:898px;
     margin:20px 0 0 0;
+    position:absolute;
+    clip:rect(310px 1600px 580px 0px); 
+    bottom:-310px; 
 }
 
 .mainText
@@ -183,15 +179,29 @@ li
   width: 100%;
   margin: 0 auto;
   max-width: 1000px;
+  font-family:  sans-serif;
+  font-size: 16px;
+  line-height: 30px;
 }
 
-.mainImage
+
+
+img#mainImage1
 {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1000px;
-
+  text-align: center;
+  margin: 0 auto;
+  width: auto;
+  height:650px;
 }
+
+img#mainImage2
+{
+  padding-top:40px;
+  margin: 0 auto;
+  width: 750px;
+  height:432px;
+}
+
 
 .mainText h1
 {
@@ -203,73 +213,85 @@ li
   list-style: none;
 }
 
-table 
+/* NRIのつよみ*/
+table.strength
 {
-  width:100%;
-  height: 1px;
-  font-size: 14px;
+  width: 100%;
+  height: 50px;
+
+  background-color: rgb(222, 236, 248);
   border-spacing: 20px;
-  border-collapse:separate;
 }
 
-#strength table
+table.strength td
 {
-  background-color: rgb(129, 208, 253);
-  border: 1px solid rgb(129, 208, 253);
+  border:1px solid #cccccc;
+  position: relative;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight:400;
+  color: #0c419a;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+tr.upper td
+{
+  height: 50px;
+  width: 200px;
+  padding: 10px 5px 10px 15px;
+}
+
+tr.lower td
+{
+  height: 50px;
+  width: 200px;
+  padding: 0px 0px 0px 10px;
 }
 
 
-table caption
+caption
 {
   float: left;
+  font-family:  sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88
 }
 
-#upper table tr
-{
-  margin-top:3; 
 
-
-}
-
-#upper td::before,#bottom td::before
+tr.upper td::before /*矢印*/  /* content:"";がないと表示されない */
 {
   content:"";
-  /*　矢印を置きたいが、表示されない
-  left: 3px;
+  display: inline-block;
   width: 4px;
   height: 4px;
-  border-top: 1px solid #7a0;
-  border-right: 1px solid #7a0;
-  -webkit-transform: rotate(45deg);
+  position: absolute;
+  top: 33px;
+  left: 5px;
+  margin: 0 5px;
+  border-top: 1px solid #CDCBCA;
+  border-right: 1px solid #CDCBCA;
   transform: rotate(45deg);
-*/
 }
 
-#upper td,#bottom td
+tr.lower td::before /*矢印*/  /* content:"";がないと表示されない */
 {
-  /*width:3px; なぜか左側のtdが大きくなる。*/
-border:1px solid #cccccc;
-padding: 5px 0 5px 10px;
-background-color: white;
-padding: 15px;
-text-align: center;
-color: #0A4199;
-font-size: 16px;
+  content:"";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 21px;
+  left: 5px;
+  margin: 0 5px;
+  border-top: 1px solid #CDCBCA;
+  border-right: 1px solid #CDCBCA;
+  transform: rotate(45deg);
 }
+/*　NRIのつよみ ここまで*/
 
 
-
-
-
-#mainImage1
-{
-text-align: center;
-}
-
-#mainImage2
-{
-  padding-top:40px; 
-}
 
 .button
 {
@@ -284,76 +306,198 @@ text-align: center;
   margin: 40px auto 60px auto;
 }
 
-.button a{
+.button a
+{
   color: #fff;
   font-size: 16px;
 }
 
-#strength
+
+
+.list
 {
-  background-color: #DEECF8;
+  display: flex;
+  width: 100%;
+}
+
+/*ここから企業情報とか*/
+
+/*企業情報 大タイトル*/
+#info
+{
+  width: 1000px;
+  border-top:2px solid black;
+  border-bottom:1px dotted #9F9FA0;
+  margin-top:100px;
+  margin-right: auto;
+  margin-left : auto;
+  padding-top: 30px ;
+  padding-bottom: 30px;
+  font-size: 20px;
+  line-height: 38px;
+  color: #333333;
+  font-weight: 700;
+  font-family:   sans-serif;
+}
+
+
+.information
+{
+  width: 100%;
+  padding-bottom:18px;
+}
+
+.item
+{
+  height: 40px;
+  position: relative;
+
+}
+
+.item a
+{
+  font-size: 14px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #0c419a;
+  font-family:   sans-serif;
+}
+
+/*矢印*/
+.item a::before
+{
+  content:"";
+  display:inline-block;
+  margin: 3px 10px;
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid #0c419a;
+  border-right: 1px solid #0c419a;
+  transform: rotate(45deg);
+}
+
+.titleInformation
+{
+  font-size: 16px;
+  font-weight: 700;/*フォントがいまいち*/
+  font-style: normal;
+  line-height: 30px;/*1.875*/
+  font-family: sans-serif;
+  padding-left:5px ;
+  margin-top: 25px ;
+  margin-bottom: 15px;
+
+}
+
+
+.list
+{
+  display:flex;
+}
+
+
+#managementPolicy,#strength2,#companyIntroduction,#branch
+{
+
+  border-bottom:  1px dotted #a5a5a5;
+  background-color: white;
+  padding-bottom:30px ;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+#managementPolicy,#strength2,#companyIntroduction,#branch
+{
+  width: 1000px;
+  height: auto;
+  text-align: left;
+}
+
+.item{
+  width: 25%;
+  height:40px;
+
+}
+
+.prev
+{
+  width: 1000px;
+  padding:60px 0 0 01;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.prev a
+{
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 400;
+  font-family:Noto Sans JP;
+  color:#0B419A;
+}
+
+/*矢印*/
+.prev a::before
+{
+  content:"";
+  display:inline-block;
+  margin: 3px 10px;
+  width: 4px;
+  height: 4px;
+  border-bottom: 1px solid #231815;
+  border-left: 1px solid #231815;
+  transform: rotate(45deg);
 }
 
 #prev,#next
 {
   font-size:16px;
-  color:#0c419a;
-  color: cornflowerblue;
+  color:#315EAA;
   margin-bottom:45px;
 }
+
+
 #prev
 {
   float:left;
 }
+
 #next
 {
   float:right;
 }
 
 
-
-
-.infomation
+/*矢印*/
+a#prev::before
 {
-  width: 1080px;
-  border-top:2px solid black;
-  margin-top:100px;
-  margin-right: auto;
-  margin-left : auto;
+  content:"<";
+  display:inline-block;
+  margin: 0px 10px;
+  width: 4px;
+  height: 4px;
+  /*
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #333333;
+  transform: rotate(45deg);
+  */
+}
+a#next::after
+{
+  content:">";
+  display:inline-block;
+  margin: 0px 10px;
+  width: 4px;
+  height: 4px;
+  /*
+  border-top: 1px solid #333333;
+  border-right: 1px solid #333333;
+  transform: rotate(45deg);
+  */
 }
 
-.infomation h3
-{
-  border-bottom: 1px dotted #a5a5a5;
-  color: #0c419a;
-  padding-bottom:18px;
-}
 
-#managementPolicy,#strength2,#companyIntroduction,#branch
-{
-  border-bottom:  1px dotted #a5a5a5;
-  background-color: white;
-}
-
-#managementPolicy caption,#strength2 caption,#companyIntroduction caption,#branch caption
-{
-  font-weight: bold;
-}
-
-#managementPolicy td,#strength2 td,#companyIntroduction td,#branch td
-{
-  color: #0c419a;
-}
-
-#managementPolicy tr td a,#strength2 tr td a,#companyIntroduction tr td a,#branch tr td a
-{
-  color:black;
-}
-
-td
-{
-  width: 25%;
-}
 
 
 .icon
@@ -362,7 +506,6 @@ width: 100%;
 height: 48px;
 list-style:none;
 padding: 0;
-
 }
 
 .icon li
@@ -374,8 +517,8 @@ line-height: 20px;
 
 .icon li a
 {
-  font-size: 10px;
-font-family:"Noto Sans JP", "sans-serif";
+font-size: 10px;
+font-family:  "sans-serif";
 color: #333333;
 font-weight: 400;
 
@@ -387,7 +530,7 @@ height: 24px;
 width: 24px;
 }
 
-h2::before
+.mainText h2::before
 {
   content:'';
   display:inline-block;
@@ -403,15 +546,12 @@ h2::before
 .snsIcon
 {
     display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    border-top: 2px solid grey;
-    border-bottom: 2px solid grey;
-    padding: 30px 0;
+    border-top: 1.5px solid #999999;
+    border-bottom: 1.5px solid #999999;
+    padding: 15px 0 10px 0;
     text-align: center;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 80px;
 
  /* font-weight: bold;
   font-size: 16px;
@@ -426,51 +566,58 @@ h2::before
   border-bottom: solid grey 2px;
   box-sizing:border-box;
   display:flex;*/
- 
 
+
+}
+
+.snsIcon ul
+{
+height: 95px;
+width: auto;
 }
 
 .snsIcon li
 {
   display: inline-block;
   color: #005bac;
-  font-size: 2rem;
+  font-size:25px;
   font-weight: 700;
-  padding: 15px;
-  padding-left: 25px;
-  /*
-  font-size: 12px;
-  padding-left:10px;
-line-height: 20px;
-width: 30px;
-height: 30px;
-margin: 0;
-padding: 30px;
-*/
+  padding: 18px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  vertical-align: top;
 }
+
 
 .snsIcon li img
 {
-height: 30px;
-width: 30px;
+height: 25px;
+width: 25px;
+
 }
 
 li#follow
 {
-  font-size: 22px;
-  padding-bottom: 25px;
-
+  font-size: 20px;
+  line-height: 30px;
+  color: #005bac;
+  font-family: HelveticaNeue;
+  width: 115px;
+  height: 30px;
+  padding: 20px;
+  text-align: center;
 }
 
 
 .indexMaster
 {
   width: 1080px;
-  margin-top:100px;
+  margin-top:40px;
   margin-right:auto;
   margin-left:auto;
 
- /*   border-top:2px solid black; */ 
+ /*   border-top:2px solid black; */
 }
 
 .index
@@ -481,71 +628,112 @@ li#follow
 .index ul
 {
   width: 25%;
-  padding-left:10;
+  padding-left:2px;
+  margin: 0;
+
 }
 
-.index li
+.index ul li
 {
-padding: 10px;
+margin-bottom:15px;
 }
 
-.index p
+.index ul li a
 {
   position: relative;
-  padding-left:1em;
+  font-size:14px;
+  line-height:21px;
+  font-style:normal;
+  font-family:"Noto Sans JP", sans-serif;
+  color:#8C8786 ;
+  font-weight:400px;
 }
 
-.index ul li p::before {
-  display: block;
-  position: absolute;    /* absoluteにすると消えちゃうのなんで？*/
-  content:">";
-  width: 1em;
-  height: 1em;
-  left: 0;
-  top: 0%;
+.index ul li a::before {
+  content:"";
+  display:inline-block;
+  margin: 3px 10px;
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid #8C8786;
+  border-right: 1px solid #8C8786;
+  transform: rotate(45deg);
  }
 
-.listHead
+
+.index ul li p
 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #555;
-  border-top:solid darkgrey 1px;
-  border-bottom:solid darkgrey 1px;
-  line-height: 35px;
-  padding: 0;
-  margin: 0;
+  margin: 10px 0;
 }
+
+.index ul li p::before
+{
+  content:"";
+  display:inline-block;
+  margin: 3px 10px;
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid #8C8786;
+  border-right: 1px solid #8C8786;
+  transform: rotate(45deg);
+}
+
+ .index ul li.listHead
+{
+
+  border-top:solid #CCCCCC 1px;
+  border-bottom:solid #CCCCCC 1px;
+  padding:0;
+  margin:16px 0 ;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+  font-family: Noto Sans JP;
+/*
+  文字の左のスペース15
+  */
+
+}
+
 
 
 footer
 {
-width:1000px;
+width:1080px;
 margin-right:auto;
 margin-left:auto;
-
+margin-top: 75px;
+margin-bottom: 25px;
 }
-ul#footer-wrap
-{
-  width:865px;
 
+ul.footer-wrap
+{
+  width:1000px;
   display: flex;
-  justify-content: center;
-  padding: 0;
-  
+/*  justify-content: center;*/
+padding-left: 0px;
 }
 
-ul#footer-wrap li
+ul.footer-wrap li
 {
-  color: grey;
-  padding:0 10px 0 5px;
-  border-right:solid 1px grey;
-font-size: 12px;
-height: 12px;
-
+  width: auto;
+  font-family:   sans-serif;
+  color: #D0D0D0;
+  font-size: 12px;
+font-style: normal;
+font-weight: 400px;
+line-height: 18px;
+  padding:0 18px;
+  border-right:solid 1px #D0D0D0;
 }
 
-li#accucessMap
+ul.footer-wrap li#disclaimer
+{
+  padding-left: 0;
+}
+
+ul.footer-wrap li#accessMap
 {
   border-right:solid 0 grey;
 }
@@ -553,4 +741,12 @@ li#accucessMap
 p#copyright
 {
 float: left;
+font-family: HelveticaNeue;
+font-size: 10px;
+line-height: 19px;
+font-style: normal;
+color: #515151;
+font-weight: 400px;
+margin-bottom: 115px;
+/*padding-left:25px;*/
 }
