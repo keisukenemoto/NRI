@@ -138,6 +138,7 @@ li
 {
   position:relative;
   height: 250px;
+  width: 100%;
   margin-bottom:35px;
   margin-top: 30px;
   overflow: hidden;
@@ -153,7 +154,7 @@ li
   line-height: 42px;
 }
 
-.head_image h2
+.head_image p
 {
   position: absolute;
   color: white;/*文字は白に*/
@@ -295,10 +296,8 @@ tr.lower td::before /*矢印*/  /* content:"";がないと表示されない */
 
 .button
 {
-  border:#005BAC;
   background-color: #005BAC;
-  padding: 20px;
-  padding-bottom:30px; 
+  padding: 10px 0 20px 0;
   text-align: center;
   display: block;
   height: 40px;
@@ -310,6 +309,23 @@ tr.lower td::before /*矢印*/  /* content:"";がないと表示されない */
 {
   color: #fff;
   font-size: 16px;
+  line-height: 19px;
+  text-decoration:none;
+}
+
+.button a::before
+{
+  content:"";
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  left:5px;
+  width: 4px;
+  height: 4px;
+  margin: 0px 10px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(45deg);
 }
 
 
@@ -508,16 +524,22 @@ list-style:none;
 padding: 0;
 }
 
+ul.icon
+{
+  margin-top: 65px;
+}
 .icon li
 {
   float:right;
-  padding-left:10px;
+  padding-left:24px;
 line-height: 20px;
 }
 
 .icon li a
 {
 font-size: 10px;
+line-height: 15px;
+font-weight@@@:bold;
 font-family:  "sans-serif";
 color: #333333;
 font-weight: 400;
