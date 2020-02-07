@@ -36,12 +36,38 @@ li {
 .global-navi li {
     list-style: none;
     display: inline-block;
+    background-color: #005BAC/*わかりやすくするために色付け*/
 }
 
-#global-icon {
-    padding-bottom: 5px;
-    ;
+.search-icon {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    float: right;
+    vertical-align: middle;
+    background-color: white;
 }
+
+img#global-icon,
+img#search-icon {
+    display: block;
+    margin: auto;
+}
+
+img#global-icon {
+    position: relative;
+    top: 10px;
+    right: 8px;
+}
+
+img#search-icon {
+    position: relative;
+    top: 6px;
+    right: 8px;
+}
+
+
+/*上記imgタグ全てで中央揃え*/
 
 #nav-drawer {
     position: relative;
@@ -163,11 +189,11 @@ li {
 }
 
 #head-image {
-    width: 100%;
+    width: 1920px;
     height: 898px;
     margin: 20px 0 0 0;
     position: absolute;
-    clip: rect(310px 1600px 580px 0px);
+    clip: rect(310px 1920px 580px 0px);
     bottom: -310px;
 }
 
